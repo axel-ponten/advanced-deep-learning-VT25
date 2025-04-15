@@ -1,0 +1,24 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage{graphicx}
+\usepackage{url}
+
+\title{Normalizing Flows}
+
+\author{Axel Pontén}
+
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+Code is found at \url{https://github.com/axel-ponten/advanced-deep-learning-VT25/tree/main/normalizing-flows}
+
+I implemented a CNN with two convolutional layers and two fully connected layers. I split 80/20 train/test. I used early stopping with patience 10, and all predictions are done with the CNN+NF of the lowest test loss.
+
+I used the exact same model as in the previous exercise except that I added the normalizing flow to the end of the CNN.
+
+The plots look good for the diagonal gaussian but not for the full gaussian and full flow. Maybe I could have initialized the normalizing flow or let it train longer to get a better fit.
+
+Worth noting is the difference in time to train. For diagonal gaussian it took 1-2 seconds per epoch, for full gaussian it took 6-7 seconds per epoch and for full flow it took 200 seconds per epoch. Full flow took two orders of magnitude longer to train and in my case performed worse. However the normalizing flow is harder to train properly, and I only tried once without playing around with the hyperparameters etc. 
+\end{document}
