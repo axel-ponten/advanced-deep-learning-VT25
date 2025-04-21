@@ -1,0 +1,20 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage{graphicx}
+\usepackage{url}
+
+\title{Normalizing Flows}
+
+\author{Axel Pontén}
+
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+Code is found at \url{https://github.com/axel-ponten/advanced-deep-learning-VT25/tree/main/gnn-icecube}
+
+I implemented a GNN with three layers with k=3 nearest neighbors. I used early stopping with patience 10 and learning rate of 1e-3, and all predictions are done with the GNN of the lowest test loss.
+
+The total number of trainable parameters was only roughly 10k. The final results show some bias in the y position, the predictions have a peak not seen in the true spectrum. This might be due to the fact that I by mistake normalized train, test and val input data separately instead of using the mean and std of the train for the normalization of the other two.
+\end{document}
