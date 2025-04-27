@@ -1,0 +1,20 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage{graphicx}
+\usepackage{url}
+
+\title{GAN}
+
+\author{Axel Pontén}
+
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+Code is found at \url{https://github.com/axel-ponten/advanced-deep-learning-VT25/tree/main/GAN}
+
+I implemented a GAN with a generator and discriminator. The generator takes a random noise vector as input and generates an image, while the discriminator takes an image as input and outputs a probability of whether the image is real or fake. The GAN is trained using the MNIST dataset, which consists of handwritten digits. I used MLPs with leaky ReLU for this. I could not get it to converge, so the output was still just noise.
+
+
+\end{document}
